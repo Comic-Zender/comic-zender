@@ -8,9 +8,8 @@
         <artifactId>comic-zender</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-
+    <groupId>org.zender.common</groupId>
     <packaging>pom</packaging>
-
     <artifactId>common</artifactId>
 
     <modules>

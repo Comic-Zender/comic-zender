@@ -4,6 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.5</version>
+        <relativePath/>
+    </parent>
+
     <groupId>org.zender</groupId>
     <artifactId>comic-zender</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -11,10 +18,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>comic-service</module>
-        <module>comic-service/comic-domain</module>
         <module>common</module>
-        <module>common/common-domain</module>
+        <module>comic-service</module>
     </modules>
 
     <properties>
@@ -30,15 +35,15 @@
         <dependencies>
             <!--     Common      -->
             <dependency>
-                <groupId>org.zender</groupId>
+                <groupId>org.zender.common</groupId>
                 <artifactId>common-domain</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <!--    Comic Service    -->
             <dependency>
-                <groupId>org.zender</groupId>
+                <groupId>org.zender.comic-service</groupId>
                 <artifactId>comic-domain</artifactId>
-                <version>${project.version}</version>
+                <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <!--     Dependencies       -->
             <dependency>

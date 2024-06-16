@@ -4,12 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.zender</groupId>
+        <groupId>org.zender.common</groupId>
         <artifactId>common</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
+    <version>0.0.1-SNAPSHOT</version>
     <artifactId>common-domain</artifactId>
+    <name>common-domain</name>
 
     <dependencies>
         <dependency>
