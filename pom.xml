@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.zender</groupId>
+    <artifactId>comic-zender</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>comic-service</module>
+        <module>comic-service/comic-domain</module>
+        <module>common</module>
+        <module>common/common-domain</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <org.owasp.dependency-check-maven>9.1.0</org.owasp.dependency-check-maven>
+        <org.projectlombok.lombok.version>1.18.32</org.projectlombok.lombok.version>
+        <org.apache.commons.version>3.14.0</org.apache.commons.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--     Common      -->
+            <dependency>
+                <groupId>org.zender</groupId>
+                <artifactId>common-domain</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--    Comic Service    -->
+            <dependency>
+                <groupId>org.zender</groupId>
+                <artifactId>comic-domain</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--     Dependencies       -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${org.apache.commons.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${org.projectlombok.lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.owasp</groupId>
+                <artifactId>dependency-check-maven</artifactId>
+                <version>${org.owasp.dependency-check-maven}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!-- Specify the output directory for reports -->
+                    <outputDirectory>${project.build.directory}/dependency-check-reports</outputDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
