@@ -3,7 +3,11 @@ package org.zender.common.infrastructure.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
-import lombok.*;
+import jakarta.persistence.MappedSuperclass;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -18,11 +22,13 @@ import java.time.Instant;
 @SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
+@MappedSuperclass
 @EntityListeners(value = AuditingEntityListener.class)
 public abstract class BasePersistEntity {
     @CreatedDate
-    @Column(insertable = false, updatable = false)
+    @Column(updatable = false)
     private Instant createdAt;
+
     @LastModifiedDate
     private Instant updatedAt;
 

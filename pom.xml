@@ -33,9 +33,15 @@
         <com.zaxxer.version>5.1.0</com.zaxxer.version>
         <org.postgresql.version>42.7.3</org.postgresql.version>
         <org.flywaydb.version>10.15.0</org.flywaydb.version>
+        <org.springdoc.version>2.6.0</org.springdoc.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>${org.springdoc.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>

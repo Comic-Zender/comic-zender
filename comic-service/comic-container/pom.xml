@@ -18,6 +18,10 @@
         </dependency>
         <dependency>
             <groupId>org.zender.comic-service</groupId>
+            <artifactId>comic-presentation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.zender.comic-service</groupId>
             <artifactId>comic-infrastructure</artifactId>
         </dependency>
         <dependency>

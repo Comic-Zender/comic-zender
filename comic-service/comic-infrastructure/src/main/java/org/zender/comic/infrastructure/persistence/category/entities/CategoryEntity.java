@@ -25,7 +25,7 @@ import java.time.Instant;
 @Entity
 @Table(name = "categories")
 @SQLDelete(sql = "UPDATE FROM categories SET deleted_at = current_timestamp WHERE id = ?")
-@SQLRestriction(value = "deleted_at <> NULL")
+@SQLRestriction(value = "deleted_at IS NULL")
 public class CategoryEntity extends BasePersistEntity {
     @Id
     private Long id;
