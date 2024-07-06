@@ -14,5 +14,10 @@
 
     <modules>
         <module>comic-domain</module>
+        <module>comic-application</module>
+        <module>comic-container</module>
+        <module>comic-infrastructure</module>
+        <module>comic-presentation</module>
+        <module>comic-shared</module>
     </modules>
 </project>
