@@ -2,7 +2,7 @@ package org.zender.comic.infrastructure.persistence.category.mappers;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Named;
-import org.zender.comic.domain.category.valueobjects.CategoryId;
+import org.zender.common.domain.valueobjects.category.CategoryId;
 import org.zender.common.domain.valueobjects.BaseId;
 import org.zender.common.mapstruct.CommonMapperConfig;
 

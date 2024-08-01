@@ -18,6 +18,7 @@
         <module>common-mapstruct</module>
         <module>common-infrastructure</module>
         <module>common-utils</module>
+        <module>common-shared</module>
     </modules>
 
 </project>

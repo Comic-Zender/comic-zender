@@ -4,7 +4,7 @@ import jakarta.validation.Valid;
 import org.zender.comic.appication.category.commands.CreateCategoryCommand;
 import org.zender.comic.appication.category.commands.UpdateCategoryCommand;
 import org.zender.comic.domain.category.models.Category;
-import org.zender.comic.domain.category.valueobjects.CategoryId;
+import org.zender.common.domain.valueobjects.category.CategoryId;
 
 public interface ICategoryService {
     Category save(@Valid CreateCategoryCommand command);

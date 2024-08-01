@@ -1,14 +1,14 @@
 package org.zender.comic.domain.common.exceptions;
 
-import org.zender.common.domain.exceptions.DomainException;
+import org.zender.common.domain.exceptions.ApplicationException;
 
-public class ComicDomainException extends DomainException {
+import java.util.Map;
 
-    public ComicDomainException(String message) {
-        super(message);
+public class ComicDomainException extends ApplicationException {
+    public ComicDomainException() {
     }
 
-    public ComicDomainException(String message, Throwable cause) {
-        super(message, cause);
+    public ComicDomainException(Map<String, Object> optionData) {
+        super(optionData);
     }
 }

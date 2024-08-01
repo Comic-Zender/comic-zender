@@ -8,7 +8,7 @@
         <artifactId>comic-zender</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>org.zender.comic-service</groupId>
+    <groupId>org.zender.comic</groupId>
     <packaging>pom</packaging>
     <artifactId>comic-service</artifactId>
 

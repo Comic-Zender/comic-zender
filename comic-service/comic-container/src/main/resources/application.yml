@@ -7,5 +7,6 @@ spring:
   output:
     ansi:
       enabled: always
-  profiles:
-    include: infra
+  config:
+    import:
+      - 'classpath:application-infra.yml'

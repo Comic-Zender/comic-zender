@@ -1,18 +1,16 @@
 package org.zender.common.domain.valueobjects;
 
+import lombok.Getter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
+@Getter
 public abstract class BaseId<Type> {
 
     private final Type value;
 
     public BaseId(Type value) {
         this.value = value;
-    }
-
-    public Type getValue() {
-        return value;
     }
 
     @Override
