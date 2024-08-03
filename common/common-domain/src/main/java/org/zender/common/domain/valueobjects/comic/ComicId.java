@@ -1,4 +1,4 @@
-package org.zender.comic.domain.comic.valueobjects;
+package org.zender.common.domain.valueobjects.comic;
 
 import org.zender.common.domain.valueobjects.BaseId;
 

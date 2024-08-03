@@ -5,11 +5,10 @@ import org.zender.comic.shared.http.category.request.CreateCategoryRequest;
 import org.zender.comic.shared.http.category.request.UpdateCategoryRequest;
 import org.zender.comic.shared.http.category.response.CategoryResponse;
 
-@RequestMapping("api/comic/categories")
-public interface CategoryApi {
-    @PostMapping
+public interface CategoryOperations {
+    @PostMapping("api/comic/categories")
     CategoryResponse create(@RequestBody CreateCategoryRequest request);
 
-    @PutMapping("{id}")
+    @PutMapping("api/comic/categories/{id}")
     CategoryResponse update(@PathVariable Long id, @RequestBody UpdateCategoryRequest request);
 }

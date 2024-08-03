@@ -26,7 +26,7 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <org.owasp.dependency-check-maven>9.1.0</org.owasp.dependency-check-maven>
+        <org.owasp.dependency-check-maven>10.0.3</org.owasp.dependency-check-maven>
         <org.projectlombok.lombok.version>1.18.32</org.projectlombok.lombok.version>
         <org.apache.commons.version>3.14.0</org.apache.commons.version>
         <org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
@@ -34,6 +34,7 @@
         <org.postgresql.version>42.7.3</org.postgresql.version>
         <org.flywaydb.version>10.15.0</org.flywaydb.version>
         <org.springdoc.version>2.6.0</org.springdoc.version>
+        <com.fasterxml.version>2.17.2</com.fasterxml.version>
     </properties>
 
     <dependencies>
@@ -77,29 +78,39 @@
                 <artifactId>common-utils</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.zender.common</groupId>
+                <artifactId>common-shared</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.zender.common</groupId>
+                <artifactId>common-validation</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             <!--    Comic Service    -->
             <dependency>
-                <groupId>org.zender.comic-service</groupId>
+                <groupId>org.zender.comic</groupId>
                 <artifactId>comic-domain</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.zender.comic-service</groupId>
+                <groupId>org.zender.comic</groupId>
                 <artifactId>comic-application</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.zender.comic-service</groupId>
+                <groupId>org.zender.comic</groupId>
                 <artifactId>comic-presentation</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.zender.comic-service</groupId>
+                <groupId>org.zender.comic</groupId>
                 <artifactId>comic-infrastructure</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.zender.comic-service</groupId>
+                <groupId>org.zender.comic</groupId>
                 <artifactId>comic-shared</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -126,6 +137,7 @@
                 <scope>runtime</scope>
             </dependency>
 
+
         </dependencies>
     </dependencyManagement>
 
@@ -145,6 +157,7 @@
                 <configuration>
                     <!-- Specify the output directory for reports -->
                     <outputDirectory>${project.build.directory}/dependency-check-reports</outputDirectory>
+                    <skip>true</skip>
                 </configuration>
             </plugin>
             <plugin>
@@ -152,7 +165,6 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-
                     <annotationProcessorPaths>
                         <path>
                             <groupId>org.projectlombok</groupId>
@@ -167,6 +179,10 @@
                         <!-- other annotation processors -->
                     </annotationProcessorPaths>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>

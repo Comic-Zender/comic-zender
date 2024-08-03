@@ -1,7 +1,7 @@
 package org.zender.comic.container.config.id.generator;
 
 import org.zender.comic.domain.category.id.generator.CategoryIdGenerator;
-import org.zender.comic.domain.category.valueobjects.CategoryId;
+import org.zender.common.domain.valueobjects.category.CategoryId;
 import org.zender.common.utils.snowflake.Snowflake;
 
 public class CategoryIdGeneratorImpl implements CategoryIdGenerator {

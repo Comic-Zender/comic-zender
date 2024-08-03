@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import org.zender.comic.appication.category.ICategoryRepository;
 import org.zender.comic.domain.category.models.Category;
-import org.zender.comic.domain.category.valueobjects.CategoryId;
+import org.zender.common.domain.valueobjects.category.CategoryId;
 import org.zender.comic.infrastructure.persistence.category.entities.CategoryEntity;
 import org.zender.comic.infrastructure.persistence.category.mappers.CategoryDataAccessMapper;
 import org.zender.comic.infrastructure.persistence.category.repositories.CategoryJpaRepository;

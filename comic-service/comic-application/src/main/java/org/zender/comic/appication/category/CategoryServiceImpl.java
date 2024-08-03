@@ -11,8 +11,8 @@ import org.zender.comic.appication.category.commands.UpdateCategoryCommand;
 import org.zender.comic.appication.category.mappers.CategoryDataMapper;
 import org.zender.comic.domain.category.id.generator.CategoryIdGenerator;
 import org.zender.comic.domain.category.models.Category;
-import org.zender.comic.domain.category.valueobjects.CategoryId;
-import org.zender.comic.domain.common.exceptions.ComicDomainException;
+import org.zender.comic.domain.common.exceptions.CategoryNotFoundException;
+import org.zender.common.domain.valueobjects.category.CategoryId;
 
 @Service
 @Validated
@@ -42,7 +42,7 @@ public class CategoryServiceImpl implements ICategoryService {
     private Category categoryCheck(CategoryId categoryId) {
         return categoryRepository.findById(categoryId).orElseThrow(() -> {
             log.warn("Category {} not found", categoryId.getValue());
-            return new ComicDomainException(String.format("Category %s not found", categoryId.getValue()));
+            return new CategoryNotFoundException("Category not found", categoryId.getValue());
         });
     }
 }

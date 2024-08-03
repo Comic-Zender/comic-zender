@@ -4,9 +4,9 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
-import org.zender.comic.domain.author.valueobjects.AuthorId;
-import org.zender.comic.domain.category.valueobjects.CategoryId;
-import org.zender.comic.domain.comic.valueobjects.ComicId;
+import org.zender.common.domain.valueobjects.author.AuthorId;
+import org.zender.common.domain.valueobjects.category.CategoryId;
+import org.zender.common.domain.valueobjects.comic.ComicId;
 import org.zender.common.domain.models.BaseAggregateRoot;
 
 import java.time.Instant;

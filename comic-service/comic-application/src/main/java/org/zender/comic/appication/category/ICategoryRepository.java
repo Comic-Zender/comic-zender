@@ -1,7 +1,7 @@
 package org.zender.comic.appication.category;
 
 import org.zender.comic.domain.category.models.Category;
-import org.zender.comic.domain.category.valueobjects.CategoryId;
+import org.zender.common.domain.valueobjects.category.CategoryId;
 
 import java.util.List;
 import java.util.Optional;

@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.zender.comic.appication.category.ICategoryService;
 import org.zender.comic.appication.category.commands.CreateCategoryCommand;
 import org.zender.comic.appication.category.commands.UpdateCategoryCommand;
-import org.zender.comic.domain.category.valueobjects.CategoryId;
+import org.zender.common.domain.valueobjects.category.CategoryId;
 import org.zender.comic.presenter.api.category.mappers.CategoryApiMapper;
-import org.zender.comic.shared.http.category.CategoryApi;
+import org.zender.comic.shared.http.category.CategoryOperations;
 import org.zender.comic.shared.http.category.request.CreateCategoryRequest;
 import org.zender.comic.shared.http.category.request.UpdateCategoryRequest;
 import org.zender.comic.shared.http.category.response.CategoryResponse;
@@ -16,7 +16,7 @@ import org.zender.comic.shared.http.category.response.CategoryResponse;
 @RestController
 @RequiredArgsConstructor
 @Tag(name = "Category Controller")
-public class CategoryController implements CategoryApi {
+public class CategoryController implements CategoryOperations {
     private final ICategoryService categoryService;
 
 
