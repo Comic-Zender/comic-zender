@@ -9,18 +9,6 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <version>0.0.1-SNAPSHOT</version>
-    <artifactId>common-domain</artifactId>
-    <name>common-domain</name>
+    <artifactId>common-application</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-    </dependencies>
 </project>

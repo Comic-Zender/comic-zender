@@ -8,9 +8,16 @@
         <artifactId>comic-zender</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-
+    <groupId>org.zender.comic-service</groupId>
     <packaging>pom</packaging>
-
     <artifactId>comic-service</artifactId>
 
+    <modules>
+        <module>comic-domain</module>
+        <module>comic-application</module>
+        <module>comic-container</module>
+        <module>comic-infrastructure</module>
+        <module>comic-presentation</module>
+        <module>comic-shared</module>
+    </modules>
 </project>

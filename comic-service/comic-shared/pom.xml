@@ -9,14 +9,16 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <version>0.0.1-SNAPSHOT</version>
-    <artifactId>comic-domain</artifactId>
-    <name>comic-domain</name>
+    <artifactId>comic-shared</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>org.zender.common</groupId>
-            <artifactId>common-domain</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
 

@@ -9,15 +9,24 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <version>0.0.1-SNAPSHOT</version>
-    <artifactId>comic-domain</artifactId>
-    <name>comic-domain</name>
+    <artifactId>comic-infrastructure</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>org.zender.common</groupId>
-            <artifactId>common-domain</artifactId>
+            <artifactId>common-infrastructure</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.zender.comic-service</groupId>
+            <artifactId>comic-application</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-database-postgresql</artifactId>
         </dependency>
     </dependencies>
-
 </project>

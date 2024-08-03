@@ -8,13 +8,16 @@
         <artifactId>comic-zender</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-
+    <groupId>org.zender.common</groupId>
     <packaging>pom</packaging>
-
     <artifactId>common</artifactId>
 
     <modules>
         <module>common-domain</module>
+        <module>common-application</module>
+        <module>common-mapstruct</module>
+        <module>common-infrastructure</module>
+        <module>common-utils</module>
     </modules>
 
 </project>

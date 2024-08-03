@@ -1,0 +1,14 @@
+version: "3.1"
+
+services:
+  comic-db-postgres:
+    image: postgres:16.3-alpine3.18
+    ports:
+      - 5901:5432
+    environment:
+      POSTGRES_USER: zender
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: zender
+    volumes:
+      - ./compose/datasource/comic:/var/lib/postgresql/data
+

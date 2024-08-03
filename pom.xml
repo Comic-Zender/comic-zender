@@ -4,6 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.5</version>
+        <relativePath/>
+    </parent>
+
     <groupId>org.zender</groupId>
     <artifactId>comic-zender</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -11,10 +18,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>comic-service</module>
-        <module>comic-service/comic-domain</module>
         <module>common</module>
-        <module>common/common-domain</module>
+        <module>comic-service</module>
     </modules>
 
     <properties>
@@ -24,34 +29,103 @@
         <org.owasp.dependency-check-maven>9.1.0</org.owasp.dependency-check-maven>
         <org.projectlombok.lombok.version>1.18.32</org.projectlombok.lombok.version>
         <org.apache.commons.version>3.14.0</org.apache.commons.version>
+        <org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
+        <com.zaxxer.version>5.1.0</com.zaxxer.version>
+        <org.postgresql.version>42.7.3</org.postgresql.version>
+        <org.flywaydb.version>10.15.0</org.flywaydb.version>
+        <org.springdoc.version>2.6.0</org.springdoc.version>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>${org.springdoc.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${org.apache.commons.version}</version>
+        </dependency>
+    </dependencies>
 
     <dependencyManagement>
         <dependencies>
             <!--     Common      -->
             <dependency>
-                <groupId>org.zender</groupId>
+                <groupId>org.zender.common</groupId>
                 <artifactId>common-domain</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.zender.common</groupId>
+                <artifactId>common-application</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.zender.common</groupId>
+                <artifactId>common-infrastructure</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.zender.common</groupId>
+                <artifactId>common-mapstruct</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.zender.common</groupId>
+                <artifactId>common-utils</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <!--    Comic Service    -->
             <dependency>
-                <groupId>org.zender</groupId>
+                <groupId>org.zender.comic-service</groupId>
                 <artifactId>comic-domain</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.zender.comic-service</groupId>
+                <artifactId>comic-application</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.zender.comic-service</groupId>
+                <artifactId>comic-presentation</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.zender.comic-service</groupId>
+                <artifactId>comic-infrastructure</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.zender.comic-service</groupId>
+                <artifactId>comic-shared</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <!--     Dependencies       -->
             <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-lang3</artifactId>
-                <version>${org.apache.commons.version}</version>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${org.mapstruct.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${org.projectlombok.lombok.version}</version>
-                <scope>provided</scope>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${org.postgresql.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-core</artifactId>
+                <version>${org.flywaydb.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-database-postgresql</artifactId>
+                <version>${org.flywaydb.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -71,6 +145,27 @@
                 <configuration>
                     <!-- Specify the output directory for reports -->
                     <outputDirectory>${project.build.directory}/dependency-check-reports</outputDirectory>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${org.projectlombok.lombok.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.mapstruct</groupId>
+                            <artifactId>mapstruct-processor</artifactId>
+                            <version>${org.mapstruct.version}</version>
+                        </path>
+                        <!-- other annotation processors -->
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
         </plugins>
