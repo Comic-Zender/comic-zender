@@ -19,6 +19,7 @@
         <module>common-infrastructure</module>
         <module>common-utils</module>
         <module>common-shared</module>
+        <module>common-validation</module>
     </modules>
 
 </project>

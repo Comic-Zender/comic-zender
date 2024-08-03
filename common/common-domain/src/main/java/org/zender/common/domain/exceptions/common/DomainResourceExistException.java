@@ -7,12 +7,12 @@ import org.zender.common.domain.exceptions.ErrorDetail;
 import java.util.Map;
 import java.util.Set;
 
-public class DomainResourceNotFoundException extends ApplicationException {
-    public DomainResourceNotFoundException(ErrorCode errorCode, String message) {
+public class DomainResourceExistException extends ApplicationException {
+    public DomainResourceExistException(ErrorCode errorCode, String message) {
         super(errorCode, message);
     }
 
-    public DomainResourceNotFoundException(ErrorCode errorCode, String message, Set<ErrorDetail> optionData) {
+    public DomainResourceExistException(ErrorCode errorCode, String message, Set<ErrorDetail> optionData) {
         super(errorCode, message, optionData);
     }
 }

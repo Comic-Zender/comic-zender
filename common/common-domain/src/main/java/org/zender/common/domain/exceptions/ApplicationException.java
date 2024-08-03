@@ -2,17 +2,20 @@ package org.zender.common.domain.exceptions;
 
 import lombok.Getter;
 
-import java.util.Map;
+import java.util.Set;
 
 @Getter
 public abstract class ApplicationException extends RuntimeException {
-    private Map<String,Object> optionData;
+    private final Set<ErrorDetail> optionData;
+    private final ErrorCode errorCode;
 
-    public ApplicationException() {
-        super();
+    public ApplicationException(ErrorCode errorCode, String message) {
+        this(errorCode, message, null);
     }
 
-    public ApplicationException(Map<String,Object> optionData) {
+    public ApplicationException(ErrorCode errorCode, String message, Set<ErrorDetail> optionData) {
+        super(message);
+        this.errorCode = errorCode;
         this.optionData = optionData;
     }
 }

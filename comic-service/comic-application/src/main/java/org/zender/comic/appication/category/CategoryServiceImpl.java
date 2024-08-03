@@ -42,7 +42,7 @@ public class CategoryServiceImpl implements ICategoryService {
     private Category categoryCheck(CategoryId categoryId) {
         return categoryRepository.findById(categoryId).orElseThrow(() -> {
             log.warn("Category {} not found", categoryId.getValue());
-            return new CategoryNotFoundException(categoryId.getValue());
+            return new CategoryNotFoundException("Category not found", categoryId.getValue());
         });
     }
 }

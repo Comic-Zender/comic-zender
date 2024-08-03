@@ -3,7 +3,6 @@ package org.zender.common.rest.response;
 import lombok.Builder;
 import lombok.Getter;
 import org.zender.common.domain.exceptions.ApplicationException;
-import org.zender.common.domain.exceptions.ErrorCode;
 
 @Getter
 @Builder
@@ -19,11 +18,12 @@ public class BaseResponse<T> {
                 .build();
     }
 
-    public static BaseResponse<ErrorResponse> error(ErrorCode errorCode, ApplicationException domainException) {
+    public static BaseResponse<ErrorResponse> error(ApplicationException exception) {
         return BaseResponse.<ErrorResponse>builder()
                 .data(ErrorResponse.builder()
-                        .errorCode(errorCode.getDomain())
-                        .message(domainException.getMessage())
+                        .errorCode(exception.getErrorCode().getDomain())
+                        .message(exception.getMessage())
+                        .details(exception.getOptionData())
                         .build())
                 .success(false)
                 .build();

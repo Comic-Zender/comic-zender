@@ -83,6 +83,11 @@
                 <artifactId>common-shared</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.zender.common</groupId>
+                <artifactId>common-validation</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             <!--    Comic Service    -->
             <dependency>
                 <groupId>org.zender.comic</groupId>

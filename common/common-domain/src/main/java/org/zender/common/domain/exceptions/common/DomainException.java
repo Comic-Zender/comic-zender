@@ -2,16 +2,17 @@ package org.zender.common.domain.exceptions.common;
 
 import org.zender.common.domain.exceptions.ApplicationException;
 import org.zender.common.domain.exceptions.ErrorCode;
-import org.zender.common.domain.exceptions.ErrorCodeValue;
+import org.zender.common.domain.exceptions.ErrorDetail;
 
 import java.util.Map;
+import java.util.Set;
 
-@ErrorCodeValue(ErrorCode.BAD_REQUEST)
 public class DomainException extends ApplicationException {
-    public DomainException() {
+    public DomainException(ErrorCode errorCode, String message) {
+        super(errorCode, message);
     }
 
-    public DomainException(Map<String, Object> optionData) {
-        super(optionData);
+    public DomainException(ErrorCode errorCode, String message, Set<ErrorDetail> optionData) {
+        super(errorCode, message, optionData);
     }
 }
