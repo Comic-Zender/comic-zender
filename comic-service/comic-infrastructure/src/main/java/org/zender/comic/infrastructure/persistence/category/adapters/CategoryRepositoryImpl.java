@@ -38,4 +38,9 @@ public class CategoryRepositoryImpl implements ICategoryRepository {
     public List<Category> findAll() {
         return categoryJpaRepository.findAll().stream().map(CategoryDataAccessMapper.INSTANCE::categoryEntityToCategory).toList();
     }
+
+    @Override
+    public void delete(CategoryId id) {
+        categoryJpaRepository.deleteById(id.getValue());
+    }
 }
