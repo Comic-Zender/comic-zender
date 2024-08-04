@@ -11,9 +11,9 @@ spring:
 
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/zender?currentSchema=comic-service
-    username: zender
-    password: password
+    url: jdbc:postgresql://localhost:5432/comic?currentSchema=comic-service
+    username: postgres
+    password: postgres
 
   flyway:
     schemas:

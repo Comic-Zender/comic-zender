@@ -14,6 +14,8 @@ import org.zender.comic.domain.category.models.Category;
 import org.zender.comic.domain.common.exceptions.CategoryNotFoundException;
 import org.zender.common.domain.valueobjects.category.CategoryId;
 
+import java.util.List;
+
 @Service
 @Validated
 @RequiredArgsConstructor
@@ -39,10 +41,20 @@ public class CategoryServiceImpl implements ICategoryService {
         return categoryRepository.update(category);
     }
 
+    @Override
+    public Category findById(CategoryId categoryId) {
+        return categoryCheck(categoryId);
+    }
+
+    @Override
+    public List<Category> findAll() {
+        return categoryRepository.findAll();
+    }
+
     private Category categoryCheck(CategoryId categoryId) {
         return categoryRepository.findById(categoryId).orElseThrow(() -> {
             log.warn("Category {} not found", categoryId.getValue());
-            return new CategoryNotFoundException("Category not found", categoryId.getValue());
+            return new CategoryNotFoundException("category not found", categoryId.getValue());
         });
     }
 }

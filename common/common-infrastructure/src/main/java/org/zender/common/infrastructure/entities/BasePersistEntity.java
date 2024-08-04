@@ -1,9 +1,7 @@
 package org.zender.common.infrastructure.entities;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.EntityListeners;
-import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,10 +24,12 @@ import java.time.Instant;
 @EntityListeners(value = AuditingEntityListener.class)
 public abstract class BasePersistEntity {
     @CreatedDate
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(updatable = false)
     private Instant createdAt;
 
     @LastModifiedDate
+    @Temporal(TemporalType.TIMESTAMP)
     private Instant updatedAt;
 
     @Override
