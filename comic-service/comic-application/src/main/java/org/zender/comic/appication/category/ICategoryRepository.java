@@ -14,4 +14,6 @@ public interface ICategoryRepository {
     Optional<Category> findById(CategoryId id);
 
     List<Category> findAll();
+
+    void delete(CategoryId id);
 }

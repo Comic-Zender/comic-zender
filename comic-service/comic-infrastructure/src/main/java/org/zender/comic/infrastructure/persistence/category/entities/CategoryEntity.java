@@ -1,9 +1,6 @@
 package org.zender.comic.infrastructure.persistence.category.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,7 +21,7 @@ import java.time.Instant;
 @NoArgsConstructor
 @Entity
 @Table(name = "categories")
-@SQLDelete(sql = "UPDATE FROM categories SET deleted_at = current_timestamp WHERE id = ?")
+@SQLDelete(sql = "UPDATE categories SET deleted_at = current_timestamp WHERE id = ?")
 @SQLRestriction(value = "deleted_at IS NULL")
 public class CategoryEntity extends BasePersistEntity {
     @Id
@@ -33,6 +30,7 @@ public class CategoryEntity extends BasePersistEntity {
     @Column(nullable = false)
     private String name;
 
+    @Temporal(TemporalType.TIMESTAMP)
     private Instant deletedAt;
 
     @Override

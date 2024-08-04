@@ -51,6 +51,12 @@ public class CategoryServiceImpl implements ICategoryService {
         return categoryRepository.findAll();
     }
 
+    @Override
+    public void delete(CategoryId categoryId) {
+        Category category = categoryCheck(categoryId);
+        categoryRepository.delete(category.getId());
+    }
+
     private Category categoryCheck(CategoryId categoryId) {
         return categoryRepository.findById(categoryId).orElseThrow(() -> {
             log.warn("Category {} not found", categoryId.getValue());

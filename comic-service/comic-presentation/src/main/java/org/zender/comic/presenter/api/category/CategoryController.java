@@ -45,4 +45,10 @@ public class CategoryController implements CategoryOperations {
         Category category = categoryService.findById(new CategoryId(id));
         return BaseResponse.success(CategoryApiMapper.INSTANCE.categoryToCategoryResponse(category));
     }
+
+    @Override
+    public BaseResponse<Void> delete(Long id) {
+        categoryService.delete(new CategoryId(id));
+        return BaseResponse.success(null);
+    }
 }
