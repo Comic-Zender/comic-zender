@@ -2,9 +2,7 @@ version: '3.8'
 
 services:
     comic-service:
-        build:
-            context: ../../comic-service/comic-container
-            dockerfile: Dockerfile
+        image: org.zender.comic.comic-service:${APPLICATION_VERSION}
         ports:
             - ${COMIC_SERVICE_PORT}:9201
         environment:
