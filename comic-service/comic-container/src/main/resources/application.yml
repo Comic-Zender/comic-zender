@@ -12,6 +12,6 @@ spring:
       - 'classpath:application-infra.yml'
 
 logging:
-    level:
-        root: DEBUG
-        org.springframework: DEBUG
+  level:
+    root: DEBUG
+    org.springframework: DEBUG
