@@ -10,8 +10,7 @@ spring:
   config:
     import:
       - 'classpath:application-infra.yml'
-
 logging:
   level:
-    root: DEBUG
-    org.springframework: DEBUG
+    root: info
+    org.springframework: info

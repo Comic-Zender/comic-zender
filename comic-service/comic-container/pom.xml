@@ -47,7 +47,7 @@
                         <name>${project.parent.groupId}.${project.parent.artifactId}:${project.parent.version}</name>
                         <pullPolicy>IF_NOT_PRESENT</pullPolicy>
                     </image>
-                    <skip>false</skip>
+                    <skip>true</skip>
                     <layers>
                         <enabled>true</enabled>
                     </layers>
