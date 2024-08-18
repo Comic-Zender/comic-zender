@@ -20,6 +20,7 @@
         <module>common-utils</module>
         <module>common-shared</module>
         <module>common-validation</module>
+        <module>common-test</module>
     </modules>
 
 </project>
