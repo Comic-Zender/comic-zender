@@ -16,4 +16,8 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Test Comic Service
-        run: mvn clean verify -pl comic-service -am
+        run: |
+          mvn clean verify -pl comic-service/comic-domain -am
+          mvn clean verify -pl comic-service/comic-application -am
+          mvn clean verify -pl comic-service/comic-infrastructure -am
+          mvn clean verify -pl comic-service/comic-presenter -am
