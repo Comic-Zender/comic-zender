@@ -8,7 +8,9 @@
         <artifactId>comic-service</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-
+    <properties>
+        <docker.skip>true</docker.skip>
+    </properties>
     <artifactId>comic-container</artifactId>
 
     <dependencies>
@@ -47,7 +49,7 @@
                         <name>${project.parent.groupId}.${project.parent.artifactId}:${project.parent.version}</name>
                         <pullPolicy>IF_NOT_PRESENT</pullPolicy>
                     </image>
-                    <skip>true</skip>
+                    <skip>${docker.skip}</skip>
                     <layers>
                         <enabled>true</enabled>
                     </layers>

@@ -1,4 +1,4 @@
-name: dev-env
+name: Build Development Environment
 on:
   push:
     branches:
