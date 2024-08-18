@@ -5,7 +5,7 @@ on:
       - master
       - development
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -15,11 +15,5 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
-      - name: Build with Maven
-        run: mvn clean verify
-      - name: Test Report
-        uses: actions/upload-artifact@v3
-        if: success() || failure()
-        with:
-          name: SpringBoot Report               # Name of the folder
-          path: target/site/serenity/           # Path to test results
+      - name: Test Comic Service
+        run: mvn clean verify -p comic-service -am
