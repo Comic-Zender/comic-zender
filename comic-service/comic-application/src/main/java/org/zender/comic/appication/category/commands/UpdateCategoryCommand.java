@@ -1,6 +1,7 @@
 package org.zender.comic.appication.category.commands;
 
-import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,6 +10,7 @@ import lombok.Setter;
 @Setter
 @Builder
 public class UpdateCategoryCommand {
-    @NotEmpty(message = "name must not be null")
+    @NotBlank(message = "name must not be blank")
+    @Size(max = 32)
     private String name;
 }
