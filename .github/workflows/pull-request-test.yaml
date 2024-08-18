@@ -17,9 +17,8 @@ jobs:
           cache: maven
       - name: Test Comic Service
         run: |
-          mvn clean verify -pl \
-            comic-service/comic-domain, \
-            comic-service/comic-application, \
-            comic-service/comic-infrastructure, \
-            comic-service/comic-presentation \
-          -am
+          mvn clean
+          mvn verify -pl comic-service/comic-domain -am
+          mvn verify -pl comic-service/comic-application -am
+          mvn verify -pl comic-service/comic-infrastructure -am
+          mvn verify -pl comic-service/comic-presentation -am
