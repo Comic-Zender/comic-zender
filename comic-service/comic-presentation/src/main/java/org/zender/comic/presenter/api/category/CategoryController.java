@@ -24,7 +24,7 @@ public class CategoryController implements CategoryOperations {
 
     @Override
     public BaseResponse<CategoryResponse> create(CreateCategoryRequest request) {
-        CreateCategoryCommand command = CategoryApiMapper.INSTANCE.requestToCommand(request);
+        CreateCategoryCommand command = CategoryApiMapper.INSTANCE.createToCommand(request);
         return BaseResponse.success(CategoryApiMapper.INSTANCE.categoryToCategoryResponse(categoryService.save(command)));
     }
 

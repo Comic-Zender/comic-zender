@@ -16,7 +16,7 @@ import org.zender.common.mapstruct.CommonMapperConfig;
 public interface CategoryApiMapper {
     CategoryApiMapper INSTANCE = Mappers.getMapper(CategoryApiMapper.class);
 
-    CreateCategoryCommand requestToCommand(CreateCategoryRequest request);
+    CreateCategoryCommand createToCommand(CreateCategoryRequest request);
 
     UpdateCategoryCommand updateToCommand(UpdateCategoryRequest request);
 
