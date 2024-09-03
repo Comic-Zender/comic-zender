@@ -3,6 +3,7 @@ version: '3.8'
 services:
   postgres:
     image: postgres:${POSTGRES_VERSION}
+    restart: on-failure
     ports:
       - ${POSTGRES_PORT}:5432
     environment:

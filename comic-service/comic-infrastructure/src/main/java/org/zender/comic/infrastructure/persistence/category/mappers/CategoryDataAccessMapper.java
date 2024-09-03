@@ -5,6 +5,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 import org.zender.comic.domain.category.models.Category;
 import org.zender.comic.infrastructure.persistence.category.entities.CategoryEntity;
+import org.zender.comic.infrastructure.persistence.common.mappers.InfraCommonDataAccessMapper;
 import org.zender.common.mapstruct.CommonMapperConfig;
 
 @Mapper(config = CommonMapperConfig.class, uses = {InfraCommonDataAccessMapper.class})
