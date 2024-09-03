@@ -35,13 +35,13 @@ metadata:
   name: postgres
   namespace: datasource
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: postgres
   ports:
     - port: 5432
       targetPort: 5432
-      nodePort: 30432
+      protocol: TCP
 
 
 

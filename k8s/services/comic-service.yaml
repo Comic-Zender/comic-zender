@@ -39,11 +39,9 @@ metadata:
   name: comic-service
   namespace: application
 spec:
-  type: NodePort
   selector:
     app: comic-service
   ports:
     - port: 5201
       targetPort: 9201
-      nodePort: 30201
       protocol: TCP
