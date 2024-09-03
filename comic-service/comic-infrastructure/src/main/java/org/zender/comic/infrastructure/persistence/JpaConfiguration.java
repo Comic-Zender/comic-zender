@@ -1,4 +1,4 @@
-package org.zender.comic.infrastructure.persistence.category;
+package org.zender.comic.infrastructure.persistence;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.domain.EntityScan;

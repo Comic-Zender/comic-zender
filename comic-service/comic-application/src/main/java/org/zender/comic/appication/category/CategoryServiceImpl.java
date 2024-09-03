@@ -11,7 +11,7 @@ import org.zender.comic.appication.category.commands.UpdateCategoryCommand;
 import org.zender.comic.appication.category.mappers.CategoryDataMapper;
 import org.zender.comic.domain.category.id.generator.CategoryIdGenerator;
 import org.zender.comic.domain.category.models.Category;
-import org.zender.comic.domain.common.exceptions.CategoryNotFoundException;
+import org.zender.comic.domain.category.exceptions.CategoryNotFoundException;
 import org.zender.common.domain.valueobjects.category.CategoryId;
 
 import java.util.List;

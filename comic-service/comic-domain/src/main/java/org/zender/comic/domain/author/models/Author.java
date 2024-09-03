@@ -8,6 +8,7 @@ import org.zender.common.domain.valueobjects.author.AuthorId;
 import org.zender.common.domain.models.BaseEntity;
 
 import java.time.Instant;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Getter
@@ -16,7 +17,7 @@ import java.util.Date;
 @SuperBuilder
 public class Author extends BaseEntity<AuthorId> {
     private String name;
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
     private Instant createdAt;
     private Instant updatedAt;
 }

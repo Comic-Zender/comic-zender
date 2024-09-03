@@ -1,5 +1,6 @@
-package org.zender.comic.domain.common.exceptions;
+package org.zender.comic.domain.category.exceptions;
 
+import org.zender.comic.domain.common.exceptions.ComicDomainException;
 import org.zender.common.domain.exceptions.ErrorCode;
 import org.zender.common.domain.exceptions.ErrorDetail;
 import org.zender.common.domain.exceptions.ErrorKey;
